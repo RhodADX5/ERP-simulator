@@ -1,0 +1,99 @@
+     sku     | listprice | standardcost | iscritical | safetystock | baseuom | precio_menor_costo | critico_sin_safety | uom_invalida 
+-------------+-----------+--------------+------------+-------------+---------+--------------------+--------------------+--------------
+ GPU-RTX-OLD | 6500.0000 |    7000.0000 | f          |      2.0000 | PZA     | t                  | f                  | f
+ CPU-RYZEN-5 | 5100.0000 |    4300.0000 | t          |      0.0000 | PZA     | f                  | t                  | f
+(2 rows)
+
+ category |  marca   |   modelo   |                    skus                     
+----------+----------+------------+---------------------------------------------
+ RAM      | kingston | fury beast | {RAM-16GB-DDR4,RAM-16GB-DDR5,RAM-KF-16-OLD}
+(1 row)
+
+        sku         |      category      | stock 
+--------------------+--------------------+-------
+ SSD-1TB-NVME       | Almacenamiento     |     0
+ SSD-2TB-KC3000     | Almacenamiento     |     0
+ SSD-2TB-NVME       | Almacenamiento     |     0
+ GPU-RTX-OLD        | Tarjeta de Video   |     2
+ RAM-KF-16-OLD      | RAM                |     5
+ PC-GAMING-01       | Producto Terminado |    10
+ CPU-RYZEN-5        | CPU                |    15
+ PSU-850W           | Fuente de Poder    |    15
+ GPU-RTX            | Tarjeta de Video   |    20
+ SSD-1TB-NVME-G4    | Almacenamiento     |    25
+ RAM-16GB-DDR5-6000 | RAM                |    30
+ MB-B650            | Motherboard        |    40
+ PSU-750W           | Fuente de Poder    |    40
+ SSD-1TB-SATA       | Almacenamiento     |    40
+ CPU-RYZEN-7        | CPU                |    50
+ RAM-16GB-DDR4      | RAM                |    50
+ RAM-16GB-DDR5      | RAM                |    60
+ PASTA-TERM         | Consumible         |  1400
+(18 rows)
+
+        sku         | standardcost | consumo_12m | valor_consumo 
+--------------------+--------------+-------------+---------------
+ GPU-RTX            |   11500.0000 |         120 |  1380000.0000
+ CPU-RYZEN-7        |    6200.0000 |         120 |   744000.0000
+ MB-B650            |    3900.0000 |         120 |   468000.0000
+ RAM-16GB-DDR5      |    1100.0000 |         240 |   264000.0000
+ PSU-750W           |    1700.0000 |         120 |   204000.0000
+ SSD-1TB-NVME       |    1300.0000 |          60 |    78000.0000
+ SSD-2TB-NVME       |    2400.0000 |          10 |    24000.0000
+ CPU-RYZEN-5        |    4300.0000 |           5 |    21500.0000
+ PASTA-TERM         |       1.5000 |         600 |      900.0000
+ PSU-850W           |    2000.0000 |           0 |        0.0000
+ SSD-1TB-NVME-G4    |    1450.0000 |           0 |        0.0000
+ PC-GAMING-01       |   28500.0000 |           0 |        0.0000
+ RAM-16GB-DDR5-6000 |    1250.0000 |           0 |        0.0000
+ SSD-2TB-KC3000     |    2300.0000 |           0 |        0.0000
+ GPU-RTX-OLD        |    7000.0000 |           0 |        0.0000
+ SSD-1TB-SATA       |     900.0000 |           0 |        0.0000
+ RAM-16GB-DDR4      |     800.0000 |           0 |        0.0000
+ RAM-KF-16-OLD      |    1100.0000 |           0 |        0.0000
+(18 rows)
+
+ abcclass | articulos |                                                                                      skus                                                                                       
+----------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ A        |         3 | {CPU-RYZEN-7,GPU-RTX,MB-B650}
+ B        |         2 | {PSU-750W,RAM-16GB-DDR5}
+ C        |        13 | {CPU-RYZEN-5,GPU-RTX-OLD,PASTA-TERM,PC-GAMING-01,PSU-850W,RAM-16GB-DDR4,RAM-16GB-DDR5-6000,RAM-KF-16-OLD,SSD-1TB-NVME,SSD-1TB-NVME-G4,SSD-1TB-SATA,SSD-2TB-KC3000,SSD-2TB-NVME}
+(3 rows)
+
+ reviewid |     proposedsku     |      decision      | suggestedsku  |                                                                         motivos                                                                          |           createdat           
+----------+---------------------+--------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------
+        5 | PSU-750-RM          | PENDIENTE_REVISION |               | ["Texto muy parecido a ['PSU-750W']", "Faltan atributos clave ['modelo']; solo se pudo comparar el texto", "Se tomaron del texto: {'potencia': '750W'}"] | 2026-11-26 17:36:15.848521-06
+        4 | PSU-1000W           | RECHAZADO          |               | ["ningún valor de IsCritical ['True'] es compatible con SafetyStock ['0']"]                                                                              | 2026-11-26 17:36:15.844321-06
+        3 | RAM-32GB-DDR7       | RECHAZADO          |               | ["'CJA' no existe en UoM_Catalog ['CAJA', 'G', 'KG', 'M', 'PZA']", "RAM: tipo='DDR7' fuera del dominio ['DDR4', 'DDR5']"]                                | 2026-11-26 17:36:15.843009-06
+        2 | GPU-RTX-4060        | RECHAZADO          |               | ["ningún valor de ListPrice ['7200'] es compatible con StandardCost ['7800']"]                                                                           | 2026-11-26 17:36:15.841053-06
+        1 | RAM-KINGSTON-16-NEW | RECHAZADO          | RAM-16GB-DDR5 | ["Mismos atributos clave que RAM-16GB-DDR5 (ram|marca=kingston|modelo=fury beast|capacidad=16gb|tipo=ddr5)"]                                             | 2026-11-26 17:36:15.834926-06
+(5 rows)
+
+    sku     | fromuom | touom |    factor     
+------------+---------+-------+---------------
+ PASTA-TERM | CAJA    | G     |   40.00000000
+ PASTA-TERM | G       | CAJA  |    0.02500000
+ PASTA-TERM | KG      | G     | 1000.00000000
+(3 rows)
+
+       origen       |    relation     |    destino    
+--------------------+-----------------+---------------
+ CPU-RYZEN-5        | COMPATIBLE_WITH | MB-B650
+ CPU-RYZEN-7        | COMPATIBLE_WITH | MB-B650
+ PSU-750W           | COMPATIBLE_WITH | GPU-RTX
+ PSU-850W           | COMPATIBLE_WITH | GPU-RTX
+ RAM-16GB-DDR5      | COMPATIBLE_WITH | MB-B650
+ RAM-16GB-DDR5-6000 | COMPATIBLE_WITH | MB-B650
+ SSD-1TB-NVME       | COMPATIBLE_WITH | MB-B650
+ SSD-1TB-NVME-G4    | COMPATIBLE_WITH | MB-B650
+ SSD-1TB-SATA       | COMPATIBLE_WITH | MB-B650
+ SSD-2TB-NVME       | COMPATIBLE_WITH | MB-B650
+ CPU-RYZEN-5        | SUBSTITUTE_FOR  | CPU-RYZEN-7
+ PSU-850W           | SUBSTITUTE_FOR  | PSU-750W
+ RAM-16GB-DDR4      | SUBSTITUTE_FOR  | RAM-16GB-DDR5
+ RAM-16GB-DDR5-6000 | SUBSTITUTE_FOR  | RAM-16GB-DDR5
+ SSD-1TB-NVME-G4    | SUBSTITUTE_FOR  | SSD-2TB-NVME
+ SSD-1TB-SATA       | SUBSTITUTE_FOR  | SSD-1TB-NVME
+ SSD-2TB-NVME       | SUBSTITUTE_FOR  | SSD-1TB-NVME
+(17 rows)
+

@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+rootdir: item/agentes/178823
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 26 items
+
+tests/test_agente_178823.py::test_bloquea_duplicado_y_sugiere_sku_existente PASSED [  3%]
+tests/test_agente_178823.py::test_alta_valida_se_clasifica_y_guarda PASSED [  7%]
+tests/test_agente_178823.py::test_precio_menor_al_costo_rechazado PASSED [ 11%]
+tests/test_agente_178823.py::test_posible_duplicado_por_texto_queda_pendiente PASSED [ 15%]
+tests/test_agente_178823.py::test_cambio_de_sku_existente_no_se_compara_consigo_mismo PASSED [ 19%]
+tests/test_agente_178823.py::test_conversiones_de_unidad PASSED          [ 23%]
+tests/test_agente_178823.py::test_sustituto_bfs_vs_greedy PASSED         [ 26%]
+tests/test_agente_178823.py::test_sustituto_respeta_compatibilidad PASSED [ 30%]
+tests/test_agente_178823.py::test_abc_persistido PASSED                  [ 34%]
+tests/test_agente_178823.py::test_auditoria_del_catalogo PASSED          [ 38%]
+tests/test_agente_178823.py::test_bitacora_registra_cada_decision PASSED [ 42%]
+tests/test_algoritmos_178823.py::test_ac3_reduce_dominios_y_detecta_vacio PASSED [ 46%]
+tests/test_algoritmos_178823.py::test_consistencia_de_nodo_explica_el_fallo PASSED [ 50%]
+tests/test_algoritmos_178823.py::test_articulo_valido PASSED             [ 53%]
+tests/test_algoritmos_178823.py::test_precio_menor_que_costo PASSED      [ 57%]
+tests/test_algoritmos_178823.py::test_critico_sin_safety_stock PASSED    [ 61%]
+tests/test_algoritmos_178823.py::test_uom_invalida_y_atributo_fuera_de_dominio PASSED [ 65%]
+tests/test_algoritmos_178823.py::test_safety_stock_fraccionario_en_pieza PASSED [ 69%]
+tests/test_algoritmos_178823.py::test_ac3_deduce_categoria_tipo_y_unidad PASSED [ 73%]
+tests/test_algoritmos_178823.py::test_normalizacion_de_texto PASSED      [ 76%]
+tests/test_algoritmos_178823.py::test_clave_estructural_ignora_redaccion PASSED [ 80%]
+tests/test_algoritmos_178823.py::test_bfs_devuelve_el_mas_cercano PASSED [ 84%]
+tests/test_algoritmos_178823.py::test_greedy_devuelve_el_de_menor_heuristica PASSED [ 88%]
+tests/test_algoritmos_178823.py::test_sin_meta PASSED                    [ 92%]
+tests/test_algoritmos_178823.py::test_heuristica_pondera_atributos_funcionales PASSED [ 96%]
+tests/test_algoritmos_178823.py::test_clasificacion_abc PASSED           [100%]
+
+============================== 26 passed in 0.88s ==============================
